@@ -13,7 +13,8 @@ config_version=5
 config/name="First Game"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="res://splash_screen.png"
+config/icon="res://bad_logo.png"
 
 [autoload]
 

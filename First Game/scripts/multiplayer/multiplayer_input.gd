@@ -1,10 +1,8 @@
-extends MultiplayerSynchronizer
+class_name PlayerInput extends Node
 
-@onready var player = $".."
+var input_direction = 0
+var input_jump = 0
 
-var input_direction 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	if get_multiplayer_authority() != multiplayer.get_unique_id():
@@ -16,12 +14,5 @@ func _ready():
 func _physics_process(delta):
 	input_direction = Input.get_axis("move_left", "move_right")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("jump"):
-		jump.rpc()
-
-@rpc("call_local")
-func jump():
-	if multiplayer.is_server():
-		player.do_jump = true
+	input_jump = Input.get_action_strength("jump")
