@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dimx1fuc38576"]
+
+[ext_resource type="Script" path="res://scripts/slime_spawn.gd" id="1_cp0l7"]
+
+[node name="SlimeSpawn" type="Area2D"]
+script = ExtResource("1_cp0l7")
+
+[node name="SlimeSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/slime.tscn")
